@@ -1,0 +1,39 @@
+﻿@model coretest.Models.LoginModel
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register your Name</title>
+</head>
+<body>
+
+<h4>Register Your Details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Addred">
+              
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+     
+           
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email"  required="required" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pass" class="control-label"></label>
+                <input asp-for="Pass"  required="required" class="form-control" />
+                <span asp-validation-for="Pass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

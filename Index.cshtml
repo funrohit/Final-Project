@@ -1,0 +1,49 @@
+﻿
+@model List<coretest.Models.MyModel>
+<h1><font color="white"><center>Employee All Data</center></font></h1>
+<br>
+<hr>
+    <style>
+        body{
+            color:white;
+            background-image: linear-gradient(to right, red , yellow);
+        }
+        th,td{
+            color:white;
+
+        }
+
+        .pos{
+            position:fixed;
+            witdh:500px;
+
+        }
+    </style>
+    <body>
+       <div class="pos"><a href="/home/add" button type="button" class="btn btn-primary btn-lg">Click to Add Data</button></a></div> 
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>ID</th>
+            <TH>NAME</TH>
+            <TH>EMAIL</TH>
+            <TH>CITY</TH>
+            <TH>EDIT</TH>
+            <TH>DELETE</TH>
+</tr>
+ @foreach(var item in Model)
+    {
+        <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+        <td>@item.Email</td>
+        <td>@item.City</td>
+       
+          <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark">EDIT</a></td>
+          <td><a asp-controller="Home" asp-action="Del" asp-route-id="@item.Id"  class="btn btn-outline-danger">DELETE</a></td>
+   </tr>
+    }
+ </table>
+
+  <a asp-controller="Home" asp-action="LogOut" class="btn btn-outline-warning">LogOut</a>
+
+    </body>
