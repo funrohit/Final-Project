@@ -39,6 +39,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
                 return BadRequest();
             }
+            }
+            
+            
+            
+            //====================in view ===============================
+            
+             <form enctype="multipart/form-data" asp-action="Index">
+     
+  <input asp-for="file" type="file" required="required" >
 
+    <input type="submit">
 
-        }
+</form>
+
